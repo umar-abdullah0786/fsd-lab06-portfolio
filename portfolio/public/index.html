@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="brand" id="brandName">Portfolio</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">&#9776;</button>
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <!-- Hero / profile (rendered by jQuery) -->
+    <section id="about" class="hero"></section>
+
+    <section id="skills" class="section">
+      <div class="section-head"><h2>Skills</h2><button class="btn add-btn" data-res="skills">+ Add</button></div>
+      <div id="skillsList" class="list skills-grid"></div>
+    </section>
+
+    <section id="education" class="section alt">
+      <div class="section-head"><h2>Education</h2><button class="btn add-btn" data-res="education">+ Add</button></div>
+      <div id="educationList" class="list"></div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-head"><h2>Experience</h2><button class="btn add-btn" data-res="experience">+ Add</button></div>
+      <div id="experienceList" class="list"></div>
+    </section>
+
+    <section id="projects" class="section alt">
+      <div class="section-head"><h2>Projects</h2><button class="btn add-btn" data-res="projects">+ Add</button></div>
+      <div id="projectsList" class="list projects-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer"><p id="footerText">&copy; Personal Portfolio</p></footer>
+
+  <!-- Reusable modal (used for profile + every section) -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3 id="modalTitle">Form</h3>
+        <button class="close" id="modalClose" aria-label="Close">&times;</button>
+      </div>
+      <form id="modalForm" enctype="multipart/form-data" novalidate>
+        <div id="modalFields"></div>
+        <div id="formErrors" class="errors" hidden></div>
+        <div class="modal-actions">
+          <button type="button" class="btn ghost" id="modalCancel">Cancel</button>
+          <button type="submit" class="btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
